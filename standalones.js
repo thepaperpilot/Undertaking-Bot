@@ -50,5 +50,3 @@ module.exports = {
 	wikia: wiki,
 	epilogue
 }
-
-
