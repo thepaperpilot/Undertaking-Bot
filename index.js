@@ -97,14 +97,14 @@ client.on('message', msg => {
 						continue
 
 					field[nY][nX]++
-				}				
+				}
 			}
 			msg.reply('Here\'s your minesweeper field:\n' +
 				field.map(arr => arr.map(key => `||:${minesweeper[key]}:||`).join(' ')).join('\n'))
 		} else {
-			Object.values(queryables).some(q => {
-				if (command in q) {
-					splitAndReply(msg, q[command])
+			Object.keys(queryables).some(q => {
+				if (command in queryables[q]) {
+					splitAndReply(msg, queryables[q][command])
 					return true
 				}
 				return false
